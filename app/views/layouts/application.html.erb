@@ -8,6 +8,13 @@
 </head>
 <body>
   <H1>Connected</H1>
+  
+  <% flash.each do |k,v|%>
+    <%if k %>
+      <span><%= v %></span>
+    <%end%>
+  <%end%>
+
 <%= yield %>
 
 </body>

@@ -5,13 +5,15 @@ def index
 end
 
 def new
-  @contact = Contact.new
+  @contact = ContactForm.new
 end
 
 def create
-  @contact = Contact.new(contact_params)
+  @contact = ContactForm.new(contact_params)
 
-  if @contact.save
+  if @contact.valid?
+    
+    @contact.save
     flash[:notice] = "Your contact has been saved"
     redirect_to contacts_path 
   else
@@ -40,7 +42,7 @@ end
 private
 
 def contact_params
-params.require(:contact).permit(:first_name, :last_name, :phone)
+params.require(:contact_form).permit(:first_name, :last_name, :phone, :name )
 end
 
 end

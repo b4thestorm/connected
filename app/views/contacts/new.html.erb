@@ -1,7 +1,10 @@
 <h3>Enter New Contact</h3>
-<%= simple_form_for @contact do |f| %>
-<%= f.input :first_name %>
-<%= f.input :last_name %>
-<%= f.input :phone %>
-<%= f.submit%>
+  <%= simple_form_for @contact, url: contacts_path do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :phone %>
+    <%= f.fields_for :group do %>
+    <%= f.input :name %>
+    <%end%>
+  <%= f.submit%>
 <%end%>
