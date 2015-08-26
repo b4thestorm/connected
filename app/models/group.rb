@@ -3,4 +3,6 @@ class Group < ActiveRecord::Base
 
   GROUPKIND = [ 'Family', 'Business', 'Friend']
 
+  
+
 end

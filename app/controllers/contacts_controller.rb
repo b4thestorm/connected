@@ -6,13 +6,14 @@ end
 
 def new
   @contact = ContactForm.new
+  @group = Group::GROUPKIND
 end
 
 def create
   @contact = ContactForm.new(contact_params)
 
   if @contact.valid?
-    
+
     @contact.save
     flash[:notice] = "Your contact has been saved"
     redirect_to contacts_path 
