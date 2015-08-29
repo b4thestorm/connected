@@ -4,11 +4,12 @@ include ActiveModel::Model
 attr_accessor :first_name, :last_name, :name, :phone
 
   
-def save
-  group = Group.new(name: self.name)
-  contact = Contact.create(first_name: self.first_name, last_name: self.last_name, phone: self.phone)
+def save(user_id)
+  group = Group.new(name: self.name, user_id: user_id)
+  contact = Contact.create(first_name: self.first_name, last_name: self.last_name, phone: self.phone, user_id: user_id)
   group.contacts << contact 
   group.save
+
 end
 
 

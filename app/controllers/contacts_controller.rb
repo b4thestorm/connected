@@ -13,8 +13,7 @@ def create
   @contact = ContactForm.new(contact_params)
 
   if @contact.valid?
-
-    @contact.save
+    @contact.save(current_user)
     flash[:notice] = "Your contact has been saved"
     redirect_to contacts_path 
   else

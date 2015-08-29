@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
+  root to: 'groups#index'
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' } 
-  devise_scope :user do 
-    root to: 'devise/registrations#new'
-  end  
-
+   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes"
+  
   resources :contacts 
   resources :groups
 

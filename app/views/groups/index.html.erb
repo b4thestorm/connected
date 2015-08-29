@@ -1,7 +1,19 @@
-DISPLAY OF YOUR GROUPS OF CONTACT
+<style type="text/css">
+  .justcause {
+    color: red;  
+  }
+  
+</style> 
+
+
+
+  
+
 <br>
-<ul>
-<%@group.each do |x|%>
-<li><%= x.name %></li>
+<br>
+<%= link_to new_contact_path do %>
+<h2 class='justcause'>Add a New Contact<h2>
 <%end%>
-</ul>
+
+
+<h2>View your groups</h2>
