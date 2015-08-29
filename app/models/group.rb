@@ -4,6 +4,10 @@ class Group < ActiveRecord::Base
 
   GROUPKIND = [ 'Family', 'Business', 'Friend']
 
+  def self.find_group(type)
+    group_type = self.where(name: type)
+    contact = group_type.map{|x| x.contacts}
+  end 
   
 
 end

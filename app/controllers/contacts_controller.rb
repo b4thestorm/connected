@@ -1,6 +1,15 @@
 class ContactsController < ApplicationController
 
 def index
+if params[:group] == 'Family'
+    @contacts = Group.find_group(params[:group])
+elsif params[:group] == 'Business'
+    @contacts = Group.find_group(params[:group])
+elsif params[:group] == 'Friends'
+    @contacts = Group.find_group(params[:group])
+else
+    @contact = Contact.all 
+  end
 
 end
 
@@ -45,4 +54,7 @@ def contact_params
 params.require(:contact_form).permit(:first_name, :last_name, :phone, :name )
 end
 
+def group_params
+params.require(:group).permit(:name)
+end
 end

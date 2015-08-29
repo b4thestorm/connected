@@ -1,0 +1,22 @@
+<%= link_to 'Family',  contacts_path( group: 'Family') %>
+<%= link_to 'Business', contacts_path( group: 'Business')%>
+<%= link_to 'Friends', contacts_path(group: 'Friends' )%>
+<br>
+<%=link_to new_contact_path do %>
+<h4> Add New Contact </h4>
+<%end%>
+<br>
+
+<%if @contacts %>
+<ul>
+<% @contacts.each do |contact|%>
+  <li><%=contact[0].first_name%></li>
+  <li><%=contact[0].last_name%></li>
+<%end%>
+</ul>
+<% else %>
+  <% @contact.each do |contact|%>
+  <li><%=contact.first_name%></li>
+  <li><%=contact.last_name%></li>
+  <%end%>
+<%end%>
