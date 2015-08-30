@@ -1,13 +1,14 @@
 class ContactsController < ApplicationController
 
 def index
-if params[:group] == 'Family'
+
+  if params[:group] == 'Family'
     @contacts = Group.find_group(params[:group])
-elsif params[:group] == 'Business'
+    elsif params[:group] == 'Business'
     @contacts = Group.find_group(params[:group])
-elsif params[:group] == 'Friends'
+    elsif params[:group] == 'Friends'
     @contacts = Group.find_group(params[:group])
-else
+    else
     @contact = Contact.all 
   end
 
