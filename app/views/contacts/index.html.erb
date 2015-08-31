@@ -10,8 +10,10 @@
 <%if @contacts %>
 <ul>
 <% @contacts.each do |contact|%>
-  <li><%=contact[0].first_name%></li>
-  <li><%=contact[0].last_name%></li>
+  <li><%="#{contact[0].first_name} #{contact[0].last_name}"%></li>
+  <li><%=contact[0].phone %></li>
+  <li><%=button_to 'Set Reminder', contact_reminders_path(contact[0].id)%></li>
+  <br>
 <%end%>
 </ul>
 <% else %>
@@ -20,3 +22,5 @@
   <li><%=contact.last_name%></li>
   <%end%>
 <%end%>
+
+<!-- <a class="btn btn-default" href="#" role="button">Link</a> Twitter bootstrap test--> 

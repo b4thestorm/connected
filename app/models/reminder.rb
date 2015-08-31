@@ -1,23 +1,25 @@
 class Reminder < ActiveRecord::Base
+belongs_to :contact
+
+
 require 'twilio-ruby'
 
 
-accountSID = ENV[ACCOUNT_SID]
-authToken = ENV[AUTH_TOKEN]
+@client = Twilio::REST::Client.new(ENV["ACCOUNT_SID"], ENV["AUTH_TOKEN"])
 
-@client = Twilio::REST::Client.new(accountSID, authToken)
-
-me = '+19292444226'
+your_number = '+19292444226'
 
 def self.trigger
   @client.messages.create(
-    from: me,
-    to: ,
-    body: 'Do not forget to call #{phone}, dont let any one miss you anymore. Please!' 
+    from: your_number,
+    to: other_phone ,
+    body: "Arnold, make sure you don't forget to call #{name} today.
+           Please!"
     )
 end
 
 
-
+#create a list to go through
+#this list will be the list that will guide the messages that will be sent to you 
 
 end
