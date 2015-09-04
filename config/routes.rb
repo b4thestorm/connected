@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :contacts do 
     resources :reminders, only: :create
   end
+
+  get 'reminders', to: 'reminders#index'
   get 'groups', to: 'groups#index'
   
 

@@ -20,6 +20,8 @@
   <% @contact.each do |contact|%>
   <li><%=contact.first_name%></li>
   <li><%=contact.last_name%></li>
+  <li><%=button_to 'Set Reminder', contact_reminders_path(contact.id)%></li>
+  <br>
   <%end%>
 <%end%>
 

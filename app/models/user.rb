@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :groups
   has_many :contacts
+
+  validates :phone, presence: true
 end

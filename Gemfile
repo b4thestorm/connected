@@ -28,7 +28,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'twilio-ruby'
 gem 'figaro'
-gem 'whenever', :require => false
+gem 'delayed_job_active_record'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

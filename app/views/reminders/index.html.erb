@@ -1,0 +1,6 @@
+
+<h1><%=current_user.email%>'s Reminders</h1>
+<hr>
+<% @reminder.each do |remind|%>
+<%= remind %>
+<%end%>
