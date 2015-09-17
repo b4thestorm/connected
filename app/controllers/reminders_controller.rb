@@ -4,7 +4,8 @@ class RemindersController < ApplicationController
     contact = Contact.find(params[:contact_id])
     contact.reminder = Reminder.create( 
                           :remind => true, 
-                          :user_id => current_user.id 
+                          :user_id => current_user.id, 
+                          :repo => params[:contact_id]
                       )
     flash[:notice] = 'Reminder has been set!'
     redirect_to contacts_path
